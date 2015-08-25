@@ -1,0 +1,32 @@
+{
+    "name": "kasser/ksconfig",
+    "description": "Yii2 module for key-value settings support",
+    "keywords": ["yii2", "yii2-config", "settings management", "kasser"],
+    "type": "yii2-module",
+    "license": "MIT",
+    "support": {
+        "source": "https://github.com/kashirin/ksconfig"
+    },
+    "authors": [
+        {
+            "name": "Sergey Kashirin",
+            "email": "kasser2005@rambler.ru",
+            "homepage": "https://www.facebook.com/kashirin"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "yiisoft/yii2": "~2.0"
+    },
+    "require-dev": {
+        "yiisoft/yii2-codeception": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "kasser\\ksconfig\\": ""
+        }
+    },
+    "extra": {
+        "bootstrap": "kasser\\ksconfig\\Bootstrap"
+    }
+}
