@@ -2,7 +2,7 @@
     "name": "kasser/ksconfig",
     "description": "Yii2 module for key-value settings support",
     "keywords": ["yii2", "yii2-config", "settings management", "kasser"],
-    "type": "yii2-module",
+    "type": "yii2-extension",
     "license": "MIT",
     "support": {
         "source": "https://github.com/kashirin/ksconfig"
