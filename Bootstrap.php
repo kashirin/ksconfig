@@ -29,7 +29,7 @@ class Bootstrap implements BootstrapInterface
 
             $app->getUrlManager()->addRules($module->getRules(),false);
 
-            print_r($app->getUrlManager()->rules);
+            
 
         }
 

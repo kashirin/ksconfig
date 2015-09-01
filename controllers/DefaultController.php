@@ -11,9 +11,8 @@ class DefaultController extends Controller
         return $this->render('index');
     }
 
-    public function actionCreate()
+    public function actionUpdate()
     {
-    	var_dump('create');
-        //return $this->render('create');
+        return $this->render('uptade');
     }
 }
