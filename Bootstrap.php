@@ -20,18 +20,11 @@ class Bootstrap implements BootstrapInterface
 
         if ($app->hasModule('ksconfig') && ($module = $app->getModule('ksconfig')) instanceof Module) {
 
-            /*$configUrlRule = [
-                    'prefix' => 'ksconfig',
-                    'rules'  => $module->getRules()
-            ];*/
-
-           
-
-            $app->getUrlManager()->addRules($module->getRules(),false);
-
-            
+            $app->getUrlManager()->addRules($module->getRules(),false); 
 
         }
+
+        
 
         
 
