@@ -12,6 +12,6 @@ Typical component usage
 
 $ksconfig = Yii::$app->ksconfig;
 
-$value = $ksconfig->getVariable('var_name');
+$value = $ksconfig->getVar('var_name');
 
 ```

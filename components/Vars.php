@@ -20,7 +20,21 @@ class Vars extends Object
 			$this->_keyValuesPairs = [];
 
 			foreach($this->config as $key => $item){
-				$this->_keyValuesPairs[$key] = (isset($item['default'])) ? $item['default'] : false;
+				if(isset($item['default'])){
+					$this->_keyValuesPairs[$key] = [
+						'type' => $item['type'],
+						'value' => $item['default'],
+						'label' => $item['label'],
+						'values'=> (isset($item['values'])) ? $item['values'] : false
+					];
+				}else{
+					$this->_keyValuesPairs[$key] = [
+						'type' => $item['type'],
+						'value' => false,
+						'label' => $item['label'],
+						'values'=> (isset($item['values'])) ? $item['values'] : false
+					];
+				}
 			}
 
 			$rows = KsconfigRecord::find()->all();
@@ -28,7 +42,7 @@ class Vars extends Object
 			if(count($rows)>0){
 				foreach($rows as $model){
 					if(isset($this->_keyValuesPairs[$model->name])){
-						$this->_keyValuesPairs[$model->name] = $model->data;
+						$this->_keyValuesPairs[$model->name]['value'] = $model->data;
 					}
 				}
 			}
@@ -46,9 +60,27 @@ class Vars extends Object
 			$this->getVariables();
 		}
 
+		$res = false;
+
+		foreach($this->_keyValuesPairs as $nm => $item){
+			if($nm == $name){
+				$item['name'] = $name;
+				$res = $item;
+				break;
+			}
+		}
+
+		return $res;
+	}
+
+	public function getValue($name){
+		if(!$this->_keyValuesPairs){
+			$this->getVariables();
+		}
+
 
 		if(isset($this->_keyValuesPairs[$name])){
-			return $this->_keyValuesPairs[$name];
+			return $this->_keyValuesPairs[$name]['value'];
 		}else{
 			return false;
 		}

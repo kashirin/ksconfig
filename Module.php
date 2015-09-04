@@ -20,8 +20,7 @@ class Module extends \yii\base\Module
 
     public function getRules(){
     	return [
-    		$this->urlPrefix.'/create'                      => $this->urlPrefix.'/default/create',
-    		$this->urlPrefix.'/<id:\d+>'                    => $this->urlPrefix.'/default/update',
+    		$this->urlPrefix.'/update/<name:[\w]+>'                    => $this->urlPrefix.'/default/update',
     	];
     }
 
