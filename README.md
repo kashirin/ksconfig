@@ -21,7 +21,7 @@ to the require section of your `composer.json` file.
 Subsequently, run
 
 ```php
-./yii migrate/up --migrationPath=@vendor/kasser/ksconfigs/migrations
+./yii migrate/up --migrationPath=@vendor/kasser/ksconfig/migrations
 ```
 
 in order to create the settings table in your database.
