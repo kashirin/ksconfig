@@ -2,14 +2,14 @@
 
 use yii\helpers\Url;
 
-$this->title = 'Настройки';
+$this->title = Yii::t('ksconfig', 'Settings');
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
 <table class="table table-hover">
 <thead>
 	<tr>
-		<td><strong>Параметр</strong></td><td><strong>Имя</strong></td><td><strong>Значение</strong></td><td>&nbsp;</td>
+		<td><strong><?=Yii::t('ksconfig', 'Param')?></strong></td><td><strong><?=Yii::t('ksconfig', 'Name')?></strong></td><td><strong><?=Yii::t('ksconfig', 'Value')?></strong></td><td>&nbsp;</td>
 	</tr>
 </thead>
 <tbody>
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	<tr>
 		<td><?=$item['label']?></td>
 		<td><?=$name?></td>
-		<td><?php if($item['value']===false){?>--не установлено--<?}else{?>
+		<td><?php if($item['value']===false){?>--<?=Yii::t('ksconfig', 'Not setted')?>--<?}else{?>
 			<? if($item['type']=='list'){?>
 			<?=$item['values'][$item['value']]?>
 			<?}else{?>
@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			<?}?>
 			<?}?>
 		</td>
-		<td><a href="/ksconfig/update/<?=$name?>">edit</a></td>
+		<td><a href="/ksconfig/update/<?=$name?>"><?=Yii::t('ksconfig', 'Edit')?></a></td>
 	</tr>
 	<?}?>
 </tbody>
