@@ -10,8 +10,8 @@ Typical component usage
 
 ```php
 
-$ksconfig = Yii::$app->ksconfig;
+$ksconfig = Yii::$app->getModule('ksconfig');
 
-$value = $ksconfig->getVar('var_name');
+$ksconfig->getVariable('email');
 
 ```
