@@ -26,7 +26,7 @@ class Module extends \yii\base\Module
 
     private function _applyConfig(){
 
-        $this->setComponents(require(__DIR__ . '\\config.php'));
+        $this->setComponents(require(__DIR__ . '/config.php'));
 
     }
 
